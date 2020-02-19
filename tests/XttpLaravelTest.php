@@ -76,4 +76,26 @@ class XttpLaravelTest extends TestCase
         $this->assertEquals($url, Xttp::testing());
 
     }
+
+    /** @test */
+    public function can_create_pending()
+    {
+        /** @var \JohnathanSmith\Xttp\XttpPending $pending */
+        $pending = Xttp::pending();
+        $bodyArray = ['Johnathan' => 'Smith'];
+        $jsonString = json_encode($bodyArray);
+
+        $mockHandler = new MockHandler([
+            new Response(200, [], $jsonString),
+        ]);
+
+        $r = $pending->setMethod('POST')
+            ->setUrl('https://johnathansmith.com/xttp')
+            ->withMock($mockHandler)
+            ->process();
+
+        $this->assertEquals($bodyArray, $r->json());
+        $this->assertEquals($jsonString, $r->body());
+
+    }
 }

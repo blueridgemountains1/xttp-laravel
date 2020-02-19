@@ -80,4 +80,9 @@ class XttpLaravel
             ->setOptions($options)
             ->process($client, $processesXttpRequests ?? $this->processesXttpRequests);
     }
+
+    public function pending(): MakesXttpPending
+    {
+        return $this->xttpPending;
+    }
 }
