@@ -92,7 +92,7 @@ class XttpLaravelTest extends TestCase
         $r = $pending->setMethod('POST')
             ->setUrl('https://johnathansmith.com/xttp')
             ->withMock($mockHandler)
-            ->process();
+            ->send();
 
         $this->assertEquals($bodyArray, $r->json());
         $this->assertEquals($jsonString, $r->body());
