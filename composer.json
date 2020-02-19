@@ -1,11 +1,23 @@
 {
   "name": "johnathan-smith/xttp-laravel",
+  "description": "A guzzle wrapper with typehints and syntactic sugar.",
   "authors": [
     {
-      "name": "Johnathan Ray Smith",
-      "email": "jr-smith@users.noreply.github.com"
+      "name": "Johnathan Smith",
+      "email": "jr-smith@users.noreply.github.com",
+      "homepage": "https://johnathansmith.com"
     }
   ],
+  "homepage": "https://johnathansmith.com",
+  "license": "mit",
+  "keywords": [
+    "guzzle",
+    "laravel",
+    "php",
+    "http",
+    "requests"
+  ],
+  "readme": "README.md",
   "require": {
     "php": "^7.2.5",
     "laravel/framework": "^5.5|^6.0",
