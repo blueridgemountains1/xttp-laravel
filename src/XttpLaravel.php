@@ -78,7 +78,7 @@ class XttpLaravel
             ->setUrl($url)
             ->setMethod($method)
             ->setOptions($options)
-            ->process($client, $processesXttpRequests ?? $this->processesXttpRequests);
+            ->send($client, $processesXttpRequests ?? $this->processesXttpRequests);
     }
 
     public function pending(): MakesXttpPending
